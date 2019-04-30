@@ -53,6 +53,7 @@ static void setup_lds(void) {
     UA_LocalizedText_deleteMembers(&config_lds->applicationDescription.applicationName);
     config_lds->applicationDescription.applicationName
         = UA_LOCALIZEDTEXT_ALLOC("en", "LDS Server");
+    config_lds->discovery.mdnsEnable = true;
     config_lds->discovery.mdns.mdnsServerName = UA_String_fromChars("LDS_test");
     config_lds->discovery.mdns.serverCapabilitiesSize = 1;
     UA_String *caps = UA_String_new();
